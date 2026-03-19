@@ -27,4 +27,4 @@ Professional website for **Raees Printing Press**, located in **Wah Cantt / Taxi
 ## Installation / Deployment
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/yourusername/raees-printing-press.git
+   git clone (https://trendingpakjobs.github.io/Raees-printing-press/)
