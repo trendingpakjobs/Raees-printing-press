@@ -231,3 +231,14 @@ transition:0.3s;
 .order-btn:hover{
 background:red;
 }
+
+/* explore button*/
+
+.explore-btn{
+font-weight:bold;
+letter-spacing:1px;
+}
+
+.explore-btn:hover{
+transform:scale(1.08);
+}
