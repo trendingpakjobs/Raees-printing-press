@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RayZub Designs – Premium Logos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400&family=Bebas+Neue&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+```
+:root {
+  color-scheme: light only;
+  --cream:   #f8f5f0;
+  --white:   #ffffff;
+  --ink:     #1a1814;
+  --gold:    #b8935a;
+  --muted:   #7a756e;
+  --border:  #e2dcd4;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.2rem 3rem;
+  background: rgba(248,245,240,0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow 0.3s;
+}
+nav.scrolled { box-shadow: 0 4px 30px rgba(26,24,20,0.07); }
+.nav-logo { font-size: 1.35rem; font-weight: 600; color: var(--ink); text-decoration: none; letter-spacing: 0.03em; }
+.nav-logo span { color: var(--gold); }
+.nav-btn {
+  font-family: 'DM Mono', monospace; font-size: 0.65rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none;
+  border: 1.5px solid var(--ink); padding: 0.55rem 1.2rem;
+  transition: background 0.25s, color 0.25s;
+}
+.nav-btn:hover { background: var(--ink); color: var(--cream); }
+
+/* HERO */
+.hero {
+  min-height: 100svh;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: 9rem 2rem 5rem;
+  background: var(--ink);
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(184,147,90,0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 6s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes pulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
+  50%       { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+}
+.hero-tag {
+  font-family: 'DM Mono', monospace; font-size: 0.63rem;
+  letter-spacing: 0.35em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1.8rem;
+  animation: fadeUp 1s 0.1s both;
+}
+.hero h1 {
+  font-size: clamp(3.2rem, 10vw, 7.5rem);
+  font-weight: 300; line-height: 1.05;
+  color: #ffffff; max-width: 860px;
+  animation: fadeUp 1s 0.25s both;
+}
+.hero h1 em { font-style: italic; color: var(--gold); }
+.hero-sub {
+  margin-top: 1.6rem; font-size: 1.15rem; font-weight: 300;
+  color: rgba(255,255,255,0.55); max-width: 420px; line-height: 1.85;
+  animation: fadeUp 1s 0.4s both;
+}
+.hero-cta {
+  margin-top: 2.8rem; display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;
+  animation: fadeUp 1s 0.55s both;
+}
+.btn-light {
+  background: #ffffff; color: var(--ink);
+  font-family: 'DM Mono', monospace; font-size: 0.65rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  text-decoration: none; padding: 1rem 2.2rem;
+  transition: opacity 0.25s;
+}
+.btn-light:hover { opacity: 0.8; }
+.btn-ghost-light {
+  background: transparent; color: #ffffff;
+  font-family: 'DM Mono', monospace; font-size: 0.65rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  text-decoration: none; padding: 1rem 2.2rem;
+  border: 1px solid rgba(255,255,255,0.35);
+  transition: border-color 0.25s, background 0.25s;
+}
+.btn-ghost-light:hover { border-color: #fff; background: rgba(255,255,255,0.07); }
+.hero-scroll {
+  position: absolute; bottom: 2.5rem;
+  left: 0; right: 0;
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  animation: fadeUp 1s 0.9s both;
+}
+.hero-scroll span {
+  font-family: 'DM Mono', monospace; font-size: 0.58rem;
+  letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.35);
+}
+.scroll-line {
+  width: 1px; height: 50px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.4), transparent);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+@keyframes scrollLine {
+  0%   { transform: scaleY(0); transform-origin: top; }
+  50%  { transform: scaleY(1); transform-origin: top; }
+  51%  { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* SECTIONS */
+.section { padding: 7rem 2rem; background: var(--cream); }
+.section-white { padding: 7rem 2rem; background: var(--white); }
+.inner { max-width: 1180px; margin: 0 auto; }
+.label {
+  font-family: 'DM Mono', monospace; font-size: 0.62rem;
+  letter-spacing: 0.3em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 0.7rem; display: block;
+}
+.title {
+  font-size: clamp(2.2rem, 5vw, 3.8rem); font-weight: 300;
+  line-height: 1.12; color: var(--ink); margin-bottom: 3rem;
+}
+.title em { font-style: italic; color: var(--gold); }
+
+/* STYLE KEY */
+.style-key { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-bottom: 2.8rem; }
+.key-item {
+  display: flex; align-items: center; gap: 0.45rem;
+  font-family: 'DM Mono', monospace; font-size: 0.6rem;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted);
+  background: var(--white); border: 1px solid var(--border);
+  padding: 0.4rem 0.8rem;
+}
+.key-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+/* PORTFOLIO GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+.card {
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: 12px; overflow: hidden; cursor: pointer;
+  transition: transform 0.45s cubic-bezier(.22,1,.36,1), box-shadow 0.45s cubic-bezier(.22,1,.36,1);
+}
+.card:hover { transform: translateY(-8px); box-shadow: 0 24px 60px rgba(26,24,20,0.12); }
+.card-img {
+  border-radius: 12px 12px 0 0;
+  width: 100%; aspect-ratio: 4/3;
+  display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.logo-svg { width: 66%; height: 66%; transition: transform 0.5s cubic-bezier(.22,1,.36,1); }
+.card:hover .logo-svg { transform: scale(1.08); }
+.card-info {
+  border-radius: 0 0 12px 12px;
+  padding: 1.1rem 1.5rem;
+  border-top: 1px solid var(--border);
+  background: var(--white);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.card-name { font-size: 1.1rem; font-weight: 400; color: var(--ink); }
+.card-type {
+  font-family: 'DM Mono', monospace; font-size: 0.58rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted);
+}
+
+/* ABOUT */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+.about-text p { font-size: 1.15rem; font-weight: 300; line-height: 1.9; color: var(--muted); margin-bottom: 1.3rem; }
+.about-text p strong { color: var(--ink); font-weight: 600; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.stat { border-left: 2px solid var(--gold); padding-left: 1.1rem; }
+.stat-num { font-size: 3rem; font-weight: 300; color: var(--ink); line-height: 1; }
+.stat-label {
+  font-family: 'DM Mono', monospace; font-size: 0.6rem;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-top: 0.3rem;
+}
+.btn-dark {
+  display: inline-block; background: var(--ink); color: var(--cream);
+  font-family: 'DM Mono', monospace; font-size: 0.65rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  text-decoration: none; padding: 1rem 2.2rem; margin-top: 1.4rem;
+  transition: opacity 0.25s;
+}
+.btn-dark:hover { opacity: 0.75; }
+
+/* ═══════════════════════════════
+   CONTACT FORM (NEW)
+═══════════════════════════════ */
+.contact-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+}
+.contact-info-text p {
+  font-size: 1.15rem; font-weight: 300; line-height: 1.85;
+  color: var(--muted); margin-bottom: 1rem;
+}
+.contact-info-text p strong { color: var(--ink); }
+.contact-detail {
+  display: flex; align-items: center; gap: 0.7rem;
+  margin-top: 1.5rem;
+  font-size: 1rem; font-weight: 300; color: var(--muted);
+}
+.contact-detail svg { color: var(--gold); flex-shrink: 0; }
+
+.contact-form-box {
+  background: var(--white);
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+}
+.cf-label {
+  font-family: 'DM Mono', monospace; font-size: 0.6rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--muted); display: block; margin-bottom: 0.45rem;
+}
+.cf-input, .cf-textarea {
+  width: 100%; padding: 0.85rem 1rem; margin-bottom: 1.3rem;
+  border: 1px solid var(--border); background: var(--cream);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.05rem; color: var(--ink); outline: none;
+  transition: border-color 0.2s;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+.cf-input:focus, .cf-textarea:focus { border-color: var(--gold); background: var(--white); }
+.cf-textarea { resize: vertical; min-height: 130px; }
+::placeholder { color: #b0a89e; }
+
+.cf-submit {
+  width: 100%;
+  background: var(--ink); color: var(--cream);
+  font-family: 'DM Mono', monospace; font-size: 0.65rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  border: none; padding: 1.1rem 2rem; cursor: pointer;
+  transition: opacity 0.25s;
+  position: relative;
+}
+.cf-submit:hover { opacity: 0.8; }
+.cf-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* Success / Error states */
+.cf-success {
+  display: none;
+  background: #f0faf4; border: 1px solid #a8d5b5;
+  padding: 1rem 1.2rem; margin-top: 1rem;
+  font-size: 1rem; font-weight: 300; color: #2d6a4f;
+  text-align: center;
+}
+.cf-error-msg {
+  display: none;
+  background: #fdf0f0; border: 1px solid #f0b8b8;
+  padding: 1rem 1.2rem; margin-top: 1rem;
+  font-size: 1rem; font-weight: 300; color: #c0392b;
+  text-align: center;
+}
+
+/* REVIEWS */
+.review-form {
+  background: var(--cream); border: 1px solid var(--border);
+  padding: 2rem; max-width: 560px; margin-bottom: 3rem;
+}
+.form-label {
+  font-family: 'DM Mono', monospace; font-size: 0.65rem;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1.4rem; display: block;
+}
+.star-row { display: flex; gap: 0.3rem; margin-bottom: 1.3rem; }
+.star-btn {
+  font-size: 2rem; color: var(--border); cursor: pointer;
+  transition: color 0.15s, transform 0.15s; line-height: 1; user-select: none;
+}
+.star-btn:hover { transform: scale(1.15); }
+.form-input, .form-textarea {
+  width: 100%; padding: 0.75rem 1rem; margin-bottom: 1rem;
+  border: 1px solid var(--border); background: var(--white);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.05rem; color: var(--ink); outline: none;
+  transition: border-color 0.2s;
+}
+.form-input:focus, .form-textarea:focus { border-color: var(--gold); }
+.form-textarea { resize: vertical; min-height: 90px; }
+.submit-btn {
+  background: var(--ink); color: var(--cream);
+  font-family: 'DM Mono', monospace; font-size: 0.65rem;
+  letter-spacing: 0.18em; text-transform: uppercase;
+  border: none; padding: 0.9rem 2rem; cursor: pointer;
+  transition: opacity 0.25s;
+}
+.submit-btn:hover { opacity: 0.75; }
+.error-msg { color: #c0392b; font-size: 0.9rem; margin-top: 0.6rem; display: none; }
+#reviews-list { display: flex; flex-direction: column; gap: 1rem; max-width: 680px; }
+.review-card {
+  background: var(--cream); border: 1px solid var(--border);
+  border-radius: 12px; padding: 1.4rem 1.6rem;
+}
+.review-top {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;
+}
+.review-author { font-size: 1.05rem; font-weight: 600; color: var(--ink); }
+.review-date {
+  font-family: 'DM Mono', monospace; font-size: 0.58rem;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-left: 0.7rem;
+}
+.review-stars { display: flex; gap: 0.15rem; }
+.review-text { font-size: 1.05rem; font-weight: 300; color: #5a5450; line-height: 1.75; }
+#no-reviews { color: var(--muted); font-size: 1.1rem; font-weight: 300; font-style: italic; }
+
+/* FOOTER */
+footer {
+  background: var(--ink); color: rgba(255,255,255,0.5);
+  padding: 2.5rem 3rem;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 1rem;
+}
+.footer-logo { font-size: 1.1rem; font-weight: 600; color: #ffffff; }
+.footer-logo span { color: var(--gold); }
+.footer-copy { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.4rem; }
+  .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .grid { grid-template-columns: 1fr; }
+  footer { padding: 2rem 1.5rem; }
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: none; }
+}
+.reveal {
+  opacity: 0; transform: translateY(36px);
+  transition: opacity 0.8s cubic-bezier(.22,1,.36,1), transform 0.8s cubic-bezier(.22,1,.36,1);
+}
+.reveal.from-left  { transform: translateX(-40px); }
+.reveal.from-right { transform: translateX(40px); }
+.reveal.visible    { opacity: 1 !important; transform: none !important; }
+
+/* Progress bar */
+#progress-bar {
+  position: fixed; top: 0; left: 0;
+  height: 3px; width: 0%;
+  background: linear-gradient(to right, #b8935a, #d4a96a, #b8935a);
+  z-index: 9999; transition: width 0.1s linear; border-radius: 0 2px 2px 0;
+}
+```
+
+  </style>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<!-- NAV -->
+
+<nav id="navbar">
+  <a class="nav-logo" href="#">Ray<span>Zub</span> Designs</a>
+  <a class="nav-btn" href="#contact">Get in Touch</a>
+</nav>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+  <p class="hero-tag">Logo Design Studio</p>
+  <h1>Logos that <em>last.</em></h1>
+  <p class="hero-sub">Custom brand identities for businesses that want to stand out — in any style, any industry.</p>
+  <div class="hero-cta">
+    <a href="#portfolio" class="btn-light">View Portfolio</a>
+    <a href="#contact" class="btn-ghost-light">Contact Me</a>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+
+<section class="section" id="portfolio">
+  <div class="inner">
+    <span class="label reveal">Selected Work</span>
+    <h2 class="title reveal">My <em>Designs</em></h2>
+
+```
+<div class="style-key reveal">
+  <div class="key-item"><div class="key-dot" style="background:#1a1814"></div>Minimalist</div>
+  <div class="key-item"><div class="key-dot" style="background:#e63946"></div>Bold</div>
+  <div class="key-item"><div class="key-dot" style="background:#2a9d8f"></div>Tech</div>
+  <div class="key-item"><div class="key-dot" style="background:#b8935a"></div>Luxury</div>
+  <div class="key-item"><div class="key-dot" style="background:#f4a261"></div>Playful</div>
+  <div class="key-item"><div class="key-dot" style="background:#d4a843"></div>Retro</div>
+</div>
+
+<div class="grid">
+  <div class="card reveal">
+    <div class="card-img" style="background:#1a1814;">
+      <svg class="logo-svg" viewBox="0 0 220 90" xmlns="http://www.w3.org/2000/svg">
+        <text x="18" y="58" font-family="Georgia,serif" font-size="46" font-weight="700" fill="#b8935a" letter-spacing="-2">NOVA</text>
+        <line x1="18" y1="65" x2="202" y2="65" stroke="#b8935a" stroke-width="1"/>
+        <text x="18" y="78" font-family="monospace" font-size="9" fill="#666" letter-spacing="7">STUDIO</text>
+      </svg>
+    </div>
+    <div class="card-info"><span class="card-name">Nova Studio</span><span class="card-type">Minimalist</span></div>
+  </div>
+
+  <div class="card reveal">
+    <div class="card-img" style="background:#e63946;">
+      <svg class="logo-svg" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+        <text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-family="'Bebas Neue',Impact,sans-serif" font-size="76" fill="#fff" letter-spacing="5">BOLT</text>
+        <rect x="14" y="76" width="172" height="3" fill="#fff" opacity="0.3"/>
+      </svg>
+    </div>
+    <div class="card-info"><span class="card-name">Bolt Agency</span><span class="card-type">Bold</span></div>
+  </div>
+
+  <div class="card reveal">
+    <div class="card-img" style="background:#0d1b2a;">
+      <svg class="logo-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <rect x="35" y="35" width="50" height="50" rx="6" stroke="#2a9d8f" stroke-width="2.5" fill="none"/>
+        <circle cx="60" cy="60" r="10" fill="#2a9d8f"/>
+        <line x1="60" y1="20" x2="60" y2="35" stroke="#2a9d8f" stroke-width="2"/>
+        <line x1="60" y1="85" x2="60" y2="100" stroke="#2a9d8f" stroke-width="2"/>
+        <line x1="20" y1="60" x2="35" y2="60" stroke="#2a9d8f" stroke-width="2"/>
+        <line x1="85" y1="60" x2="100" y2="60" stroke="#2a9d8f" stroke-width="2"/>
+        <circle cx="60" cy="20" r="3" fill="#2a9d8f"/>
+        <circle cx="60" cy="100" r="3" fill="#2a9d8f"/>
+        <circle cx="20" cy="60" r="3" fill="#2a9d8f"/>
+        <circle cx="100" cy="60" r="3" fill="#2a9d8f"/>
+      </svg>
+    </div>
+    <div class="card-info"><span class="card-name">Axion Tech</span><span class="card-type">Tech Icon</span></div>
+  </div>
+
+  <div class="card reveal">
+    <div class="card-img" style="background:#f5f0e8;">
+      <svg class="logo-svg" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="65" cy="65" r="55" stroke="#b8935a" stroke-width="1.8" fill="none"/>
+        <circle cx="65" cy="65" r="47" stroke="#b8935a" stroke-width="0.7" fill="none" stroke-dasharray="4 3"/>
+        <text x="50%" y="44%" dominant-baseline="middle" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#b8935a" letter-spacing="5">MAISON</text>
+        <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-family="Georgia,serif" font-size="26" font-weight="600" fill="#1a1814">DuVal</text>
+        <text x="50%" y="72%" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-size="7" fill="#b8935a" letter-spacing="4">EST. 1998</text>
+        <line x1="32" y1="81" x2="54" y2="81" stroke="#b8935a" stroke-width="0.8"/>
+        <line x1="76" y1="81" x2="98" y2="81" stroke="#b8935a" stroke-width="0.8"/>
+      </svg>
+    </div>
+    <div class="card-info"><span class="card-name">Maison DuVal</span><span class="card-type">Luxury Seal</span></div>
+  </div>
+
+  <div class="card reveal">
+    <div class="card-img" style="background:#fff3e0;">
+      <svg class="logo-svg" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+        <rect x="10" y="16" width="180" height="68" rx="34" fill="#f4a261"/>
+        <text x="50%" y="52%" dominant-baseline="middle" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="38" font-weight="700" fill="#fff">Poppy!</text>
+        <circle cx="22" cy="16" r="10" fill="#ffd166" opacity="0.5"/>
+        <circle cx="178" cy="84" r="7" fill="#ffd166" opacity="0.4"/>
+      </svg>
+    </div>
+    <div class="card-info"><span class="card-name">Poppy Kids</span><span class="card-type">Playful</span></div>
+  </div>
+
+  <div class="card reveal">
+    <div class="card-img" style="background:#f8f5f0;">
+      <svg class="logo-svg" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="60,12 108,90 12,90" stroke="#1a1814" stroke-width="2.5" fill="none"/>
+        <polygon points="60,34 86,80 34,80" stroke="#1a1814" stroke-width="1.5" fill="none" opacity="0.3"/>
+        <line x1="60" y1="12" x2="60" y2="90" stroke="#b8935a" stroke-width="1" opacity="0.5"/>
+        <circle cx="60" cy="58" r="7" fill="#1a1814"/>
+      </svg>
+    </div>
+    <div class="card-info"><span class="card-name">Triarch</span><span class="card-type">Geometric</span></div>
+  </div>
+
+  <div class="card reveal">
+    <div class="card-img" style="background:#2d1f3d;">
+      <svg class="logo-svg" viewBox="0 0 200 100" xmlns="http://www.w3.org/2000/svg">
+        <text x="50%" y="43%" dominant-baseline="middle" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="40" fill="#e0aaff" letter-spacing="2">Luna</text>
+        <text x="50%" y="68%" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-size="8" fill="#c77dff" letter-spacing="7">CREATIVE CO.</text>
+        <path d="M48 57 Q100 72 152 57" stroke="#c77dff" stroke-width="1.2" fill="none"/>
+      </svg>
+    </div>
+    <div class="card-info"><span class="card-name">Luna Creative</span><span class="card-type">Script</span></div>
+  </div>
+
+  <div class="card reveal">
+    <div class="card-img" style="background:#1c1207;">
+      <svg class="logo-svg" viewBox="0 0 200 110" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 10 L190 35 L190 75 L100 100 L10 75 L10 35 Z" stroke="#d4a843" stroke-width="2" fill="none"/>
+        <path d="M100 22 L178 43 L178 67 L100 88 L22 67 L22 43 Z" stroke="#d4a843" stroke-width="0.8" fill="none" opacity="0.35"/>
+        <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Georgia,serif" font-size="22" font-weight="700" fill="#d4a843" letter-spacing="3">IRON</text>
+        <text x="50%" y="66%" dominant-baseline="middle" text-anchor="middle" font-family="monospace" font-size="7" fill="#d4a843" letter-spacing="4">WORKS CO.</text>
+      </svg>
+    </div>
+    <div class="card-info"><span class="card-name">Iron Works</span><span class="card-type">Retro</span></div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="section-white" id="about">
+  <div class="inner">
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="label reveal">About Me</span>
+        <h2 class="title reveal" style="margin-bottom:1.6rem;">Why <em>RayZub?</em></h2>
+        <p class="reveal">I design logos that don't just look good — they <strong>tell your story.</strong> Every brand is unique, and every design is built from scratch.</p>
+        <p class="reveal">From clean minimalist marks to bold expressive designs — I cover every style so your brand gets exactly what it needs.</p>
+        <a href="#contact" class="btn-dark reveal">Order a Logo</a>
+      </div>
+      <div class="stats">
+        <div class="stat reveal"><div class="stat-num">50+</div><div class="stat-label">Logos Made</div></div>
+        <div class="stat reveal"><div class="stat-num">100%</div><div class="stat-label">Unique</div></div>
+        <div class="stat reveal"><div class="stat-num">24h</div><div class="stat-label">Response Time</div></div>
+        <div class="stat reveal"><div class="stat-num">All</div><div class="stat-label">Styles Covered</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="section" id="contact">
+  <div class="inner">
+    <span class="label reveal">Contact</span>
+    <h2 class="title reveal">Let's work <em>together</em></h2>
+
+```
+<div class="contact-grid">
+  <!-- Left: Info -->
+  <div class="contact-info-text reveal">
+    <p>Need a logo that perfectly represents your brand? Fill out the form and I'll get back to you within <strong>24 hours.</strong></p>
+    <p>Just tell me your idea — I'll handle the rest.</p>
+    <div class="contact-detail">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+      rayzubdesigns1@gmail.com
+    </div>
+    <div class="contact-detail">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      Reply within 24 hours
+    </div>
+  </div>
+
+  <!-- Right: Form -->
+  <div class="contact-form-box reveal">
+    <label class="cf-label" for="cf-name">Your Name</label>
+    <input class="cf-input" id="cf-name" type="text" placeholder="z.B. Max Mustermann" autocomplete="name"/>
+
+    <label class="cf-label" for="cf-email">Your E-Mail</label>
+    <input class="cf-input" id="cf-email" type="email" placeholder="deine@email.com" autocomplete="email"/>
+
+    <label class="cf-label" for="cf-message">Your Message</label>
+    <textarea class="cf-textarea" id="cf-message" placeholder="Beschreibe dein Logo-Projekt..."></textarea>
+
+    <button class="cf-submit" id="cf-btn" onclick="sendEmail()">Send Message</button>
+
+    <div class="cf-success" id="cf-success">
+      ✓ Nachricht gesendet! Ich melde mich innerhalb von 24 Stunden.
+    </div>
+    <div class="cf-error-msg" id="cf-error">
+      ✗ Etwas ist schiefgelaufen. Bitte versuche es nochmal.
+    </div>
+  </div>
+</div>
+```
+
+  </div>
+</section>
+
+<!-- REVIEWS -->
+
+<section class="section-white" id="reviews">
+  <div class="inner">
+    <span class="label reveal">Client Reviews</span>
+    <h2 class="title reveal">What clients <em>say</em></h2>
+
+```
+<div class="review-form reveal">
+  <span class="form-label">Leave a Review</span>
+  <p style="font-size:0.95rem;color:var(--muted);margin-bottom:0.6rem;font-weight:300;">Your Rating *</p>
+  <div class="star-row" id="star-input">
+    <span class="star-btn" data-val="1">★</span>
+    <span class="star-btn" data-val="2">★</span>
+    <span class="star-btn" data-val="3">★</span>
+    <span class="star-btn" data-val="4">★</span>
+    <span class="star-btn" data-val="5">★</span>
+  </div>
+  <input id="review-name" class="form-input" type="text" placeholder="Your name"/>
+  <textarea id="review-text" class="form-textarea" placeholder="Your review (optional)"></textarea>
+  <button class="submit-btn" onclick="submitReview()">Submit Review</button>
+  <p class="error-msg" id="review-error">Please select a star rating first.</p>
+</div>
+
+<div id="reviews-list"></div>
+<p id="no-reviews">No reviews yet — be the first!</p>
+```
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="footer-logo">Ray<span>Zub</span> Designs</div>
+  <div class="footer-copy">© 2025 RayZub Designs · All rights reserved</div>
+</footer>
+
+<script>
+  // ── EmailJS Init ──
+  emailjs.init('u-nHO3BbFS5wUZe6s');
+
+  // ── Send Contact Form ──
+  function sendEmail() {
+    const name    = document.getElementById('cf-name').value.trim();
+    const email   = document.getElementById('cf-email').value.trim();
+    const message = document.getElementById('cf-message').value.trim();
+    const btn     = document.getElementById('cf-btn');
+    const success = document.getElementById('cf-success');
+    const errBox  = document.getElementById('cf-error');
+
+    // Hide previous messages
+    success.style.display = 'none';
+    errBox.style.display  = 'none';
+
+    // Basic validation
+    if (!name || !email || !message) {
+      errBox.textContent = '✗ Bitte fülle alle Felder aus.';
+      errBox.style.display = 'block';
+      return;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      errBox.textContent = '✗ Bitte gib eine gültige E-Mail-Adresse ein.';
+      errBox.style.display = 'block';
+      return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    emailjs.send('service_72or3jn', 'template_yayod6r', {
+      from_name:  name,
+      from_email: email,
+      message:    message,
+    })
+    .then(() => {
+      success.style.display = 'block';
+      btn.textContent = 'Message Sent ✓';
+      document.getElementById('cf-name').value    = '';
+      document.getElementById('cf-email').value   = '';
+      document.getElementById('cf-message').value = '';
+    })
+    .catch(() => {
+      errBox.textContent = '✗ Etwas ist schiefgelaufen. Bitte versuche es nochmal.';
+      errBox.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = 'Send Message';
+    });
+  }
+
+  // ── Navbar shadow ──
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 20);
+    const bar = document.getElementById('progress-bar');
+    const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+    bar.style.width = pct + '%';
+  }, { passive: true });
+
+  // ── Scroll reveal ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ── Star rating ──
+  let selectedStars = 0;
+  const starBtns = document.querySelectorAll('.star-btn');
+  function highlightStars(val) {
+    starBtns.forEach(b => {
+      b.style.color = parseInt(b.dataset.val) <= val ? '#b8935a' : '#e2dcd4';
+    });
+  }
+  starBtns.forEach(btn => {
+    btn.addEventListener('mouseover', () => highlightStars(btn.dataset.val));
+    btn.addEventListener('mouseout',  () => highlightStars(selectedStars));
+    btn.addEventListener('click', () => {
+      selectedStars = parseInt(btn.dataset.val);
+      highlightStars(selectedStars);
+    });
+  });
+
+  // ── Reviews ──
+  function buildCard(r) {
+    const card = document.createElement('div');
+    card.className = 'review-card';
+    const starsHtml = Array.from({length:5}, (_,i) =>
+      `<span style="color:${i < r.stars ? '#b8935a' : '#e2dcd4'};font-size:1.1rem;">★</span>`
+    ).join('');
+    card.innerHTML = `
+      <div class="review-top">
+        <div><span class="review-author">${r.name}</span><span class="review-date">${r.date}</span></div>
+        <div class="review-stars">${starsHtml}</div>
+      </div>
+      ${r.text ? `<p class="review-text">${r.text}</p>` : ''}
+    `;
+    return card;
+  }
+
+  function loadReviews() {
+    const saved = JSON.parse(localStorage.getItem('rayzub_reviews') || '[]');
+    const list  = document.getElementById('reviews-list');
+    const noMsg = document.getElementById('no-reviews');
+    list.innerHTML = '';
+    if (saved.length === 0) { noMsg.style.display = 'block'; }
+    else {
+      noMsg.style.display = 'none';
+      saved.forEach(r => list.appendChild(buildCard(r)));
+    }
+  }
+
+  function submitReview() {
+    const errEl = document.getElementById('review-error');
+    if (selectedStars === 0) { errEl.style.display = 'block'; return; }
+    errEl.style.display = 'none';
+    const review = {
+      name:  document.getElementById('review-name').value.trim() || 'Anonymous',
+      text:  document.getElementById('review-text').value.trim(),
+      stars: selectedStars,
+      date:  new Date().toLocaleDateString('en-US', {year:'numeric', month:'short', day:'numeric'})
+    };
+    const saved = JSON.parse(localStorage.getItem('rayzub_reviews') || '[]');
+    saved.unshift(review);
+    localStorage.setItem('rayzub_reviews', JSON.stringify(saved));
+    document.getElementById('review-name').value = '';
+    document.getElementById('review-text').value = '';
+    selectedStars = 0;
+    highlightStars(0);
+    loadReviews();
+  }
+
+  loadReviews();
+</script>
+
+</body>
+</html>
